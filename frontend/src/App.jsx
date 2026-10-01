@@ -33,17 +33,20 @@ function App() {
   };
 
   return (
-    <>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <input id="urlInput" type="url" value={url} onChange={handleUrl} />
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-      <div>
-        <h3>{responseMessage}</h3>
-      </div>
-    </>
+    <div className="App">
+      <form onSubmit={handleSubmit}>
+        <input id="urlInput" type="url" value={url} onChange={handleUrl} />
+        <button type="submit">Submit</button>
+      </form>
+      {responseMessage && (
+        <div className="result-box">
+          <h3>Your shortened Link:</h3>
+          <a href={responseMessage} target="_blank" rel="noreferre">
+            {responseMessage}
+          </a>
+        </div>
+      )}
+    </div>
   );
 }
 
