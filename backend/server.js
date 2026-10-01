@@ -28,6 +28,7 @@ app.get("/:slug", (req, res) => {
   const extLink = urls[reqSlug];
   if (extLink) {
     res.redirect(extLink);
+    console.log(`Link Created: ${reqSlug} => ${extLink}`);
   } else {
     res.status(404).send("Link not found or expired.");
   }
