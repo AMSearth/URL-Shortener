@@ -34,9 +34,10 @@ function App() {
 
   return (
     <div className="App">
+      <h2>URL-Shortener</h2>
       <form onSubmit={handleSubmit}>
         <input id="urlInput" type="url" value={url} onChange={handleUrl} />
-        <button type="submit">Submit</button>
+        <button type="submit">Shorten</button>
       </form>
       {responseMessage && (
         <div className="result-box">
